@@ -6,6 +6,8 @@
 * When generating periodic TWCC feedback packets we no longer burst several packets in a row to catch up, i.e., we now use `MissedTickBehavior::Skip` instead of the default `MissedTickBehavior::Burst` for the ticker in question. [#323](https://github.com/webrtc-rs/webrtc/pull/323) by [@k0nserv](https://github.com/k0nserv).
 * Don't generate empty TWCC packets that libWebRTC will ignore. [#324](https://github.com/webrtc-rs/webrtc/pull/324) by [@k0nserv](https://github.com/k0nserv).
 * Increased minimum support rust version to `1.60.0`.
+* Add a `max_age` property to the NACK responder interceptor. When configured with `ResponderBuilder::with_max_packet_age` packets that were originally sent more than `max_packet_age` ago will not be resent, even when requested. [#313](https://github.com/webrtc-rs/webrtc/pull/313) by [@k0nserv](https://github.com/k0nserv).
+
  
 
 ## v0.8.0
